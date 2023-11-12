@@ -1,17 +1,15 @@
 #include <stdio.h>
 #include <string.h>
 
-//실습3
+//실습4
 
 int main(void) {
-    char src[] = "The worst things to eat before you sleep";
-    char dst[100];
+    char str[30] = "happy C programming";
 
-    // 문자열 복사 
-    strcpy(dst, src);
+    // 문자열 길이 계산
+    int length = strlen(str);
 
-    // 복사된 문자열 출력
-    printf("copied string: %s\n", dst);
+    printf("문자열 \"%s\"의 길이: %i\n", str, length);
 
     return 0;
 }
