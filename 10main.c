@@ -2,8 +2,6 @@
 #include <string.h>
 
 //실습3
-#include <stdio.h>
-
 
 int main(void) {
     char src[] = "The worst things to eat before you sleep";
