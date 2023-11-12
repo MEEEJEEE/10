@@ -1,28 +1,19 @@
 #include <stdio.h>
+#include <string.h>
 
-//실습2
-//문자열을 초기화하고, 그후에 문자열을 반벅하여 하나씩 출력 
+//실습3
+#include <stdio.h>
+
+
 int main(void) {
-    int i = 0;
-    char str[4];
-    str[0] = 'a';
-    str[1] = 'b';
-    str[2] = 'c';
-    str[3] = '\0';
-    
-    printf("%s\n", str);
+    char src[] = "The worst things to eat before you sleep";
+    char dst[100];
 
-    // 현재 문자 (str[i])이 맨 끝이 아닐 때까지 반복
-    while (str[i] != '\0') {
-        // 현재 문자 하나 출력
-        printf("%c", str[i]);
-        
-        // i를 1 증가
-        i++;
-    }
+    // 문자열 복사 
+    strcpy(dst, src);
 
-    // 반복이 끝나면 줄 바꿈
-    printf("\n");
+    // 복사된 문자열 출력
+    printf("copied string: %s\n", dst);
 
     return 0;
 }
