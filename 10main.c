@@ -1,15 +1,35 @@
 #include <stdio.h>
 #include <string.h>
 
-//실습4
+//실습5
 
 int main(void) {
-    char str[30] = "happy C programming";
+    // 파일 포인터 정의
+    FILE *filePointer;
 
-    // 문자열 길이 계산
-    int length = strlen(str);
+    // 파일 열기
+    filePointer = fopen("sample.txt", "w");
 
-    printf("문자열 \"%s\"의 길이: %i\n", str, length);
+    // 파일 열기에 실패한 경우
+    if (filePointer == NULL) {
+        printf("Cannot open the file.\n");
+        return 1;  // 프로그램 종료, 오류 코드 반환
+    }
+
+    // 3개의 단어 입력 받아 파일에 쓰기
+    for (int i = 0; i < 3; i++) {
+        char word[50];
+        printf("Input a word: ");
+        scanf("%s", word);
+
+        // 파일에 내용 쓰기
+        fprintf(filePointer, "%s\n", word);
+    }
+
+    // 파일 닫기
+    fclose(filePointer);
+
+    printf("Successfully wrote content to the file.\n");
 
     return 0;
 }
