@@ -2,10 +2,10 @@
 #include <string.h>
 
 //실습6
-//한 글자씩 읽어와서 출력
+//한 단어씩 읽어와서 출력
 int main(void) {
     FILE *fp = NULL;
-    char c;
+    char word[50];
 
     // 파일 열기
     fp = fopen("sample.txt", "r");
@@ -14,9 +14,9 @@ int main(void) {
         return 1;  // 오류 코드 반환
     }
 
-    // 한 글자씩 읽어와서 출력
-    while ((c = fgetc(fp)) != EOF) {
-        putchar(c);
+    // 한 단어씩 읽어와서 출력
+    while (fgets(word, sizeof(word), fp) != NULL) {
+        printf("%s", word);
     }
 
     // 파일 닫기
